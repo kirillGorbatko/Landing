@@ -1,10 +1,33 @@
 %h1 {
-	font-size: 4rem;
-	text-transform: uppercase;
+	font-family: $font_2;
+	font-size: 6.4rem;
+	font-weight: 700;
+	line-height: 1.16;
+}
+
+%h2 {
+	font-family: $font_2;
+	font-size: 5.2rem;
+	font-weight: 700;
+}
+
+%h3 {
+	font-family: $font_2;
+	font-size: 3.4rem;
+	font-weight: 500;
+	line-height: 2.12;
+}
+
+%h4 {
+	font-family: $font_2;
+	font-size: 2.4rem;
+	font-weight: 500;
+	line-height: 1.33;
+	letter-spacing: 0.02em;
 }
 
 // offsets
 
 %title_offset {
-	margin-bottom: 2rem;
+	margin-bottom: 2.4rem;
 }
