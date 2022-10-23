@@ -28,8 +28,8 @@
 	}
 
 	.body--scroll_state & {
-		background-color: rgba($white, 0.6);
-		box-shadow: rgba($black, 0.2) 0 .8rem 2.4rem;
+		background-color: rgba($white, .96);
+		box-shadow: rgba($black, .2) 0 .8rem 2.4rem;
 	}
 
 	.body--open_menu_state & {
@@ -41,17 +41,17 @@
 	@include z-index(header);
 
 	@include bp($point_2, min) {
-		padding: 5.7rem var(--gl-indent) 4rem;
+		padding: 5.7rem var(--gl-indent) 3.3rem;
 	}
 
 	@include bp($point_3) {
-		padding: 3rem var(--gl-indent) 2rem;
+		padding: 3rem var(--gl-indent) 1rem;
 	}
 }
 
 //------------------------------------------------------------layout###
 
-.header__in {
+.header_in {
 	max-width: $page_width;
 	width: 100%;
 	margin: 0 auto;

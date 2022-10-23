@@ -1,9 +1,413 @@
+%footer_item {
+	font-size: 2rem;
+	letter-spacing: .02em;
+	line-height: 1.6;
+	color: $gray_2;
+}
+
 .footer {
 	width: 100%;
 	min-height: var(--height-footer);
 	flex: 0 0 auto;
 
 	font-size: 1rem;
+}
 
-	will-change: transform;
+.footer__top {
+	padding: 7.1rem var(--gl-indent) 4.2rem;
+}
+
+.footer_in {
+	max-width: $page_width;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.footer__row {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include bp($point_1, min) {
+		margin: 0 min(-11.11vw, -16rem) -4rem 0;
+	}
+
+	@include bp($point_1 - 1) {
+		margin: 0 -4rem -4rem 0;
+	}
+
+	@include bp($point_3) {
+		justify-content: center;
+	}
+}
+
+.footer__column {
+	@include bp($point_1, min) {
+		padding: 0 min(11.11vw, 16rem) 4rem 0;
+
+		&.footer__column--wide_mod {
+			width: 34%;
+		}
+
+		&:not(&.footer__column--wide_mod) {
+			width: 22%;
+			padding-top: .5rem;
+		}
+	}
+
+	@include bp($point_1 - 1, $point_2) {
+		&.footer__column--wide_mod {
+			width: 31%;
+		}
+
+		&:not(&.footer__column--wide_mod) {
+			width: 23%;
+		}
+	}
+
+	@include bp($point_1 - 1) {
+		padding: 0 4rem 4rem 0;
+	}
+
+	@include bp($point_3) {
+		text-align: center;
+
+		&.footer__column--wide_mod {
+			width: 100%;
+			
+			@include flex_block(column, nowrap, flex-start, center, center);
+		}
+	}
+
+	@include bp($point_3, $point_4) {
+		&:not(&.footer__column--wide_mod) {
+			width: 33.333%;
+		}
+	}
+
+	@include bp($point_4 - 1) {
+		width: 100%;
+	}
+}
+
+.footer_logo {
+	display: block;
+	width: 12.7rem;
+	height: 3.9rem;
+
+	&:not(:last-child) {
+		margin-bottom: 3.3rem;
+	}
+
+	&:hover,
+	&:focus {
+		.footer_logo__text {
+			&:nth-child(2) {
+				color: $pink;
+			}
+		}
+	}
+}
+
+.footer_logo__text {
+	@extend %transition_color;
+
+	fill: currentColor;
+
+	&:nth-child(1) {
+		color: $pink_1;
+	}
+
+	&:nth-child(2) {
+		color: $gray_1;
+	}
+}
+
+.footer__adress {
+	@extend %footer_item;
+
+	&:not(:last-child) {
+		margin-bottom: 3.8rem;
+	}
+}
+
+.footer_social__label {
+	@extend %footer_item;
+
+	font-weight: 700;
+
+	&:not(:last-child) {
+		margin-bottom: 1.6rem;
+	}
+}
+
+.footer_social__list {
+	margin: 0 1.1rem 1.1rem 0;
+
+	@include flex_block(row, wrap, flex-start);
+}
+
+.footer_social__item {
+	padding: 0 1.1rem 1.1rem 0;
+}
+
+.footer_social__link {
+	@extend %transition_color;
+
+	display: block;
+	width: 4.1rem;
+	height: 4.1rem;
+
+	padding: 1rem;
+	border-radius: 50%;
+
+	background-color: $white;
+	color: $gray_5;
+
+	&:hover,
+	&:focus {
+		color: $pink;
+	}
+}
+
+.footer_title {
+	@extend %h4;
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 3.5rem;
+		}
+	}
+
+	@include bp($point_3, $point_4) {
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+
+	@include bp($point_4 - 1) {
+		@include flex_block(row, nowrap, center, center, center);
+
+		.footer__column--active-mod & {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.footer_title__icon {
+	@extend %transition_transform;
+
+	width: 2rem;
+	height: 1.7rem;
+	flex-shrink: 0;
+	margin-left: .6rem;
+
+	.footer__column--active-mod & {
+		transform: rotate(-180deg);
+	}
+
+	@include bp($point_4, min) {
+		display: none;
+	}
+}
+
+.footer__list {
+	@include bp($point_4 - 1) {
+		max-height: 0;
+		opacity: 0;
+		overflow: hidden;
+		pointer-events: none;
+
+		transition: opacity, max-height 0.25s ease-out;
+		will-change: opacity, max-height;
+	
+		.footer__column--active-mod & {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+}
+
+.footer__item {
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 2.5rem;
+		}
+	}
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 1.6rem;
+		}
+	}
+}
+
+.footer__link {
+	@extend %transition_color;
+	@extend %footer_item;
+
+	&:hover,
+	&:focus{
+		color: $gray_1;
+
+		text-decoration: none;
+	}
+}
+
+.footer__bottom {
+	background-color: $pink;
+
+	padding: 1.3rem var(--gl-indent);
+}
+
+.footer__wrap {
+	@include bp($point_2, min) {
+		padding-right: 5rem;
+	}
+
+	@include bp($point_6, min) {
+		@include flex_block(row, wrap, flex-start, center, center);
+	}
+}
+
+.footer_copy {
+	flex: 1 1 auto;
+
+	color: $white;
+
+	display: flex;
+	align-items: center;
+
+	@include bp($point_6 - 1) {
+		justify-content: center;
+
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.footer_copy__icon {
+	width: 1.6rem;
+	height: 1.6rem;
+
+	&:not(:last-child) {
+		margin-right: .6rem;
+	}
+}
+
+.footer_copy__text {
+	font-family: $font_2;
+	font-size: 1.4rem;
+	font-weight: 450;
+	letter-spacing: .02em;
+	line-height: 1.5;
+}
+
+.footer_lang {
+	position: relative;
+
+	@include bp($point_6 - 1) {
+		display: flex;
+		justify-content: center;	
+	}
+}
+
+.footer_lang_current {
+	cursor: pointer;
+
+	@include flex_block(row, nowrap, flex-start, center, center);
+}
+
+.footer_lang_current__icon {
+	width: 2.8rem;
+	height: 2.8rem;
+
+	color: $white;
+
+	&:not(:last-child) {
+		margin-right: 1.3rem;
+	}
+}
+
+.footer_lang_current__text {
+	font-family: $font_2;
+	font-size: 1.4rem;
+	font-weight: 450;
+	letter-spacing: .02em;
+	color: $white;
+
+	&::after {
+		content: '';
+		display: block;
+		margin-left: .5rem;
+	}
+}
+
+.footer_lang_current__arrow {
+	@extend %transition_transform;
+
+	flex-shrink: 0;
+	height: .5rem;
+	width: .7rem;
+
+	margin-left: .6rem;
+	margin-top: 1px;
+
+	transform: rotate(-180deg);
+
+	color: $white;
+
+	.footer_lang--open_state & {
+		transform: rotate(0deg);
+	}
+}
+
+.footer_lang__list {
+	@extend %transition_opacity;
+
+	position: absolute;
+	bottom: 3rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 3;
+
+	width: 8rem;
+
+	background-color: $white;
+	box-shadow: rgba($black, .2) 0 .8rem 2.4rem;
+	border-radius: $gl_radius;
+	overflow: hidden;
+
+	opacity: 0;
+	pointer-events: none;
+
+	.footer_lang--open_state & {
+		opacity: 1;
+		pointer-events: initial;
+	}
+}
+
+.footer_lang__item {
+	&:not(:last-child) {
+		border-bottom: 1px solid $pink;
+	}
+}
+
+.footer_lang__link {
+	@extend %transition_color_background;
+
+	display: block;
+	padding: .6rem 1rem;
+
+	font-size: 1.6rem;
+	color: $gray_1;
+	text-align: center;
+
+	&:hover,
+	&:focus{
+		text-decoration: none;
+
+		background-color: $pink_1;
+		color: $white;
+	}
 }

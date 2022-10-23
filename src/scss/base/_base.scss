@@ -10,12 +10,12 @@
 	--height-footer: 10rem;
 
 	@include bp($point_2, min) {
-		--height-header: 12.7rem;
+		--height-header: 12rem;
 		--gl-indent: 3rem;
 	}
 
 	@include bp($point_3) {
-		--height-header: 8rem;
+		--height-header: 7rem;
 		--gl-indent: 1.6rem;
 	}
 }
@@ -82,7 +82,7 @@ body {
 	min-height: 100%;
 	height: auto !important;
 
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .base {
