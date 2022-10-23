@@ -6,11 +6,55 @@
 }
 
 .footer {
+	position: relative;
+
 	width: 100%;
 	min-height: var(--height-footer);
 	flex: 0 0 auto;
 
 	font-size: 1rem;
+
+	background-color: $white;
+}
+
+.footer_decor {
+	@extend %stretch;
+
+	z-index: 1;
+
+	width: 100%;
+	height: 100%;
+}
+			
+.footer_decor__item {
+	position: absolute;
+
+	object-fit: contain;
+	
+	&.footer_decor__item--mod_1 {
+		bottom: 0;
+		z-index: 1;
+	}
+
+	&.footer_decor__item--mod_2 {
+		z-index: 2;
+		top: 3px;
+	}
+
+	@include bp($point_4, min) {
+		left: 0;
+		width: 100vw;
+	}
+
+	@include bp($point_4 - 1) {
+		left: -50vw;
+		width: 200vw;
+	}
+}
+
+.footer__content {
+	position: relative;
+	z-index: 2;
 }
 
 .footer__top {
