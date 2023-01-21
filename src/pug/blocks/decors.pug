@@ -1,0 +1,22 @@
+.decors
+	//- balls
+	+loop_while(4)
+		.decors__item
+			.decors__ball(class=`decors__ball--mod_${i}`)
+	//- squares
+	+loop_while(3)
+		.decors__item
+			.decors__square(class=`decors__square--mod_${i}`)
+	//- dotts
+	+loop_while(10)
+		.decors__item
+			.decors__dott
+	//- triangles
+	+loop_while(3)
+		.decors__item
+			.decors__triangle(class=`decors__triangle--mod_${i}`)
+	//- arrows
+	+loop_while(7)
+		.decors__item
+			.decors__arrow(class=`decors__arrow--mod_${i}`)
+				+icon(`decor_arrow_${i}`, 'icon--size_mod')

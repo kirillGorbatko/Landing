@@ -1,0 +1,49 @@
+-
+	testimonials = [
+		{
+			text: 'Heartiest congratulations to the team for Future projects. I extend thankful wishes and wish the team best of luck for the future assignments to come. Your effort is gladly',
+			name: 'Jorge Morrison',
+			country: 'North California,USA',
+		},
+		{
+			text: 'I extend thankful wishes and wish the team best of luck for the future assignments to come. Your effort is gladly',
+			name: 'Anna Morrison',
+			country: 'Canada',
+		},
+		{
+			text: 'Lorem ipsum dolor sit amet. I extend thankful wishes and wish the team best of luck for the future assignments to come. Your effort is gladly',
+			name: 'Lorem Ipsum',
+			country: 'Dnipro,Ukraine',
+		},
+	]
+
+include ../templates/mixins/_m_section_content
+
+section.section.testimonials.js-testimonials
+	.section_in 
+		.testimonials__row 
+			.testimonials__column
+				.testimonials_image
+					img.testimonials_image__in(src="./images/testimonial_man.svg" alt="Testimonials man illustration")
+			.testimonials__column
+				+section_content({
+					mod: 'testimonials__content',
+					label: 'Testimonial ',
+					title: 'Thats What Our <br/> Client Says About Us',
+				})
+				.testimonials__slider.js-testimonials-slider.swiper
+					.testimonials__arrows
+						button.testimonials__arrow.testimonials__arrow--prev_mod.js-testimonials-arrow-prev(type="button" aria-label="Prev slide")
+							+icon('slider_arrow', 'icon--size_mod')
+						button.testimonials__arrow.testimonials__arrow--next_mod.js-testimonials-arrow-next(type="button" aria-label="Next slide")
+							+icon('slider_arrow', 'icon--size_mod')
+					.testimonials__wrapper.swiper-wrapper
+						each item in testimonials
+							.testimonials__slide.swiper-slide
+								if item.text
+									.testimonials__text(data-swiper-parallax-scale="0")!= item.text
+								.testimonials__bottom(data-swiper-parallax-scale="0")
+									if item.name
+										.testimonials__name!= item.name
+									if item.country
+										.testimonials__country!= item.country

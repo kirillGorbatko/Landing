@@ -1,0 +1,49 @@
+.btn {
+	@extend %pink_btn_1;
+
+	box-shadow: 1rem 1rem 2rem rgba($pink_4, .2);
+
+	&.btn--mod_1 {
+		@extend %btn_size_1;
+	}
+	&.btn--mod_2 {
+		@extend %btn_size_2;
+	}
+	&.btn--mod_3 {
+		@extend %btn_size_3;
+	}
+}
+
+.btn__text {
+	&:not(:last-child) {
+		margin-right: 1.9rem;
+	}	
+}
+
+.btn_icon {
+	width: 4.3rem;
+	height: 3.2rem;
+
+	display: flex;
+	align-items: center;
+}
+
+.btn_icon__arrow {
+	width: 3.2rem;
+	height: 1.6rem;
+	flex-shrink: 0;
+
+	margin-right: -2rem;
+
+	color: $white;
+}
+
+.btn_icon__rectangle {
+	width: 3.2rem;
+	height: 3.2rem;
+	flex-shrink: 0;
+
+	border-radius: 2px;
+	border: 1.5px solid $white;;
+	background-color: rgba($pink_3, .28);
+}

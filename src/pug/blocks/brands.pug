@@ -1,0 +1,39 @@
+-
+	brands = [
+		{
+			path: 'testimonials/ferrari.png',
+			alt: 'Ferrari logo',
+		},
+		{
+			path: 'testimonials/microsoft.png',
+			alt: 'Microsoft logo',
+		},
+		{
+			path: 'testimonials/nat_geo.png',
+			alt: 'Nathional geographic logo',
+		},
+		{
+			path: 'testimonials/deloitte.png',
+			alt: 'Deloitte logo',
+		},
+		{
+			path: 'testimonials/google.png',
+			alt: 'Google logo',
+		},
+	]
+
+section.section.brands.js-brands
+	.section_in
+		.brands__slider.swiper.js-brands-slider
+			.brands__nav 
+				.brands__scrollbar.js-brands-scrollbar
+			.brands__row.swiper-wrapper
+				each item in brands
+					.brands__item.swiper-slide
+						a.brands__link(href="#" aria-label=`${item.alt} link`)
+							+picture({
+								img: item.path,
+								class: 'brands_img',
+								img_class: 'brands_img__in',
+								alt: item.alt,
+							})

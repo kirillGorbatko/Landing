@@ -1,0 +1,68 @@
+.section_content {
+	@include bp($point_4, min) {
+		max-width: 60rem;
+	}
+	@include bp($point_4 - 1) {
+		text-align: center;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.section_content__label {
+	@extend %label;
+
+	.hero & {
+		&::before{
+			display: block;
+			width: 3.6rem;
+			flex-shrink: 0;
+			height: .3rem;
+			margin: auto .7rem 1.1rem 0;
+
+			background-color: $pink;
+			content: "";
+		}
+
+		@include flex_block(row, nowrap, flex-start);
+	}
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 3rem;
+		}
+
+		@include bp($point_3) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.section_content__title {
+	color: $gray_1;
+
+	@at-root {
+		h1#{&} {
+			@extend %h1;
+		}
+		h2#{&} {
+			@extend %h2;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 2.8rem;
+	}
+}
+
+.section_content__text {
+	@extend %text;
+	
+	padding-right: 1rem;
+
+	&:not(:last-child) {
+		margin-bottom: 4rem;
+	}
+}

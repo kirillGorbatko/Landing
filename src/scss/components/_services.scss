@@ -1,0 +1,247 @@
+@import "ScssHelpers/_helpers_all.scss";
+
+.services {
+}
+
+.services__content {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 5.8rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 4rem;
+		}
+	}
+}
+
+.services__list {
+	display: flex;
+	align-items: stretch;
+	flex-wrap: wrap;
+
+	@include bp($point_1, min) {
+		margin: 0 -3rem -3rem 0;
+	}
+	@include bp($point_1 - 1) {
+		margin: 0 -2rem -2rem 0;
+	}
+}
+
+.services_item {
+	@include bp($point_1, min) {
+		padding: 0 3rem 3rem 0;
+	}
+	@include bp($point_1 - 1) {
+		padding: 0 2rem 2rem 0;
+	}
+
+	@include bp($point_2, min) {
+		width: 25%;
+	}
+	@include bp($point_3, $point_4) {
+		width: 50%;
+	}
+	@include bp($point_4 - 1) {
+		width: 100%;
+	}
+}
+
+.services_item__body {
+	height: 100%;
+
+	text-align: center;
+	border-radius: .8rem;
+	overflow: hidden;
+
+	transition: box-shadow .3s ease;
+	will-change: box-shadow;
+
+	&:hover,
+	&:focus{
+		box-shadow: 1rem 1rem 2rem rgba($pink_4, .2);
+	
+		@include bp($point_2, min) {
+			color: $white;
+		}
+	}
+
+	@include bp($point_3) {
+		color: $white;
+	}
+}
+
+.services_item__info {
+	height: calc(100% - 3.4rem);
+
+	border-radius: .8rem;
+
+	@include bp($point_1, min) {
+		padding: 5.2rem 2.2rem 4.8rem;
+	}
+	@include bp($point_1 - 1) {
+		padding: 4rem .8rem 4.4rem;
+	}
+
+	@include bp($point_2, min) {
+		background-color: $light_pink;
+
+		transition: background .3s ease;
+		will-change: background;
+
+		.services_item__body:hover & {
+			background-color: $pink;
+		}
+	}
+	@include bp($point_3) {
+		background-color: $pink;
+	}
+}
+
+.services_item__wrap {
+	padding: 0 2.2rem 1.8rem;
+	margin-top: -1.4rem;
+
+	border-radius: .8rem;
+
+	@include bp($point_2, min) {
+		opacity: 0;
+		pointer-events: none;
+		background-color: $light_pink;
+
+		transition: background .3s ease, opacity .3s ease;
+		will-change: background, opacity;
+
+		.services_item__body:hover & {
+			background-color: $pink;
+	
+			pointer-events: initial;
+			opacity: 1;
+		}
+	}
+
+	@include bp($point_3) {
+		background-color: $pink;
+	}
+}
+
+.services_item__icon {
+	@extend %transition_color;
+
+	width: 5rem;
+	height: 5rem;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	&:not(:last-child) {
+		margin-bottom: 5.2rem;
+	}
+
+	@include bp($point_2, min) {
+		color: $pink;
+
+		.services_item__body:hover & {
+			color: inherit;
+		}	
+	}
+	@include bp($point_3) {
+		color: $white;
+	}
+}
+
+.services_item__title {
+	@extend %transition_color;
+	@extend %h3;
+	
+	&:not(:last-child) {
+		margin-bottom: 1.6rem;
+	}
+
+	@include bp($point_2, min) {
+		color: $gray_1;
+	
+		.services_item__body:hover & {
+			color: inherit;
+		}		
+	}
+	@include bp($point_3) {
+		color: inherit;
+	}
+}
+
+.services_item__text {
+	@extend %transition_color;
+
+	font-size: 1.6rem;
+	line-height: 1.5;
+
+	&:not(:last-child) {
+		margin-bottom: 3.2rem;
+	}
+
+	@include bp($point_2, min) {
+		color: $gray_2;
+	
+		.services_item__body:hover & {
+			color: inherit;
+		}		
+	}
+	@include bp($point_3) {
+		color: inherit;
+	}
+}
+
+.services_item_link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 3rem;
+
+	&:hover,
+	&:focus{
+		text-decoration: none;
+	}
+}
+
+.services_item_link__text {
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 1.5;
+	color: $white;
+
+	&:not(:last-child) {
+		margin-right: 1rem;
+	}
+}
+
+.services_item_link__icon {
+	$size: .7rem;
+
+	width: 0;
+	height: 0;
+
+	border-left: $size solid $white;
+	border-top: $size solid transparent;
+	border-bottom: $size solid transparent;
+
+	.services_item__body:hover & {
+		animation: arrow 1s ease infinite;
+	}
+}
+
+@keyframes arrow {
+	0% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(.4rem);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}

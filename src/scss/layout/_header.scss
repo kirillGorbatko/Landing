@@ -9,8 +9,8 @@
 
 	font-size: 1rem;
 
-	transition: box-shadow .3s ease-in, background .3s ease-out;
-	will-change: box-shadow, background;
+	transition: box-shadow .3s ease-in, background .3s ease-out, transform .3s ease-out;
+	will-change: box-shadow, background, transform;
 
 	&::before {
 		@extend %stretch;
@@ -27,9 +27,12 @@
 		content: '';
 	}
 
-	.body--scroll_state & {
+	&.header--scroll_state {
 		background-color: rgba($white, .96);
 		box-shadow: rgba($black, .2) 0 .8rem 2.4rem;
+	}
+	&.header--hide_state {
+		transform: translateY(-100%);
 	}
 
 	.body--open_menu_state & {
@@ -170,7 +173,7 @@
 
 		overflow-x: hidden;
 		overflow-y: auto;
-		background-color: rgba($gray_4, .9);
+		background-color: rgba($gray_4, .99);
 
 		transition: transform .3s ease;
 		will-change: transform;
@@ -217,11 +220,12 @@
 }
 
 .header_menu__link {
-	@extend %transition_color;
-
 	font-family: $font_2;
 	line-height: 1.7;
 	color: $gray_3;
+
+	transition: color .3s ease, text-shadow .3s ease;
+	will-change: color, text-shadow;
 
 	.header_menu__item--active_mod & {
 		color: $gray_1;
@@ -234,6 +238,7 @@
 	&:hover,
 	&:focus {
 		color: $gray_1;
+		text-shadow: .6px 0 0 currentColor;
 		text-decoration: none;
 	}
 

@@ -1,0 +1,140 @@
+@import "ScssHelpers/_helpers_all.scss";
+
+.brands {
+	z-index: 3;
+}
+
+.brands__slider {
+	position: relative;
+
+	padding-bottom: 4rem;
+
+	&.swiper {
+		overflow: visible;
+	}
+}
+
+.brands__nav {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 5;
+
+	transform: translateY(100%);
+
+	width: 100%;
+	height: 4rem;
+
+	@include bp($point_4, min) {
+		padding: 0 2rem;
+	}
+	@include bp($point_4 - 1) {
+		padding: 0 1rem;
+	}
+}
+
+.brands__scrollbar {
+	position: relative;
+
+	height: 100%;
+	width: 100%;
+	padding: 1rem 0;
+
+	&::before{
+		position: absolute;
+		top: 0;
+		left: 50%;
+	
+		transform: translateX(-50%);
+	
+		width: 100vw;
+		height: 100%;
+
+		background: radial-gradient(circle, rgba($blue, .4) 0%, rgba($pink, .6) 100%);
+		content:'';
+	}
+
+	.swiper-scrollbar-drag {
+		@extend %transition_opacity;
+		
+		height: 100%;
+
+		border-radius: 10rem;
+		background-color: rgba($white, .4);
+		border: .3rem solid $white;
+		will-change: transform;
+
+		&.swiper-scrollbar-lock {
+			opacity: 0;
+		}
+	}
+}
+
+.brands__row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.brands__item {
+	height: 5.6rem;
+
+	&:nth-child(5n+1){
+		@include bp($point_4, min) {
+			width: 16rem;
+		}
+		@include bp($point_4 - 1) {
+			width: 14rem;
+		}
+	}
+	&:nth-child(5n+2){
+		@include bp($point_4, min) {
+			width: 20rem;
+		}
+		@include bp($point_4 - 1) {
+			width: 16rem;
+		}
+	}
+	&:nth-child(5n+3),
+	&:nth-child(5n+5){
+		@include bp($point_4, min) {
+			width: 14rem;
+		}
+		@include bp($point_4 - 1) {
+			width: 10rem;
+		}
+	}
+	&:nth-child(5n+4){
+		@include bp($point_4, min) {
+			width: 18rem;
+		}
+		@include bp($point_4 - 1) {
+			width: 12rem;
+		}
+	}
+}
+
+.brands__link {
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	transition: filter .3s ease 0s;
+	will-change: filter;
+
+	&:hover,
+	&:focus{
+		text-decoration: none;
+		filter: brightness(1%);
+	}
+}
+
+.brands_img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.brands_img__in {
+	@extend %contain_img;
+}

@@ -195,8 +195,6 @@
 }
 
 .footer_social__link {
-	@extend %transition_color;
-
 	display: block;
 	width: 4.1rem;
 	height: 4.1rem;
@@ -204,12 +202,24 @@
 	padding: 1rem;
 	border-radius: 50%;
 
-	background-color: $white;
 	color: $gray_5;
+
+	transition: color .3s ease-in-out, background .3s ease-in-out;
+	will-change: color, background;
 
 	&:hover,
 	&:focus {
-		color: $pink;
+		@include bp($point_2, min) {
+			color: $white;
+			background-color: $pink;
+		}
+		@include bp($point_3) {
+			color: $pink;
+		}
+	}
+
+	@include bp($point_2, min) {
+		background-color: $white;
 	}
 }
 
@@ -286,12 +296,15 @@
 }
 
 .footer__link {
-	@extend %transition_color;
 	@extend %footer_item;
+
+	transition: color .3s ease, text-shadow .3s ease;
+	will-change: color, text-shadow;
 
 	&:hover,
 	&:focus{
 		color: $gray_1;
+		text-shadow: .6px 0 0 currentColor;
 
 		text-decoration: none;
 	}
@@ -358,6 +371,13 @@
 
 .footer_lang_current {
 	cursor: pointer;
+	color: $white;
+	transition: all 0.3s ease 0s;
+
+	&:hover,
+	&:focus{
+		color: rgba($white, .6);
+	}
 
 	@include flex_block(row, nowrap, flex-start, center, center);
 }
@@ -366,7 +386,7 @@
 	width: 2.8rem;
 	height: 2.8rem;
 
-	color: $white;
+	color: inherit;
 
 	&:not(:last-child) {
 		margin-right: 1.3rem;
@@ -378,7 +398,7 @@
 	font-size: 1.4rem;
 	font-weight: 450;
 	letter-spacing: .02em;
-	color: $white;
+	color: inherit;
 
 	&::after {
 		content: '';
@@ -399,7 +419,7 @@
 
 	transform: rotate(-180deg);
 
-	color: $white;
+	color: inherit;
 
 	.footer_lang--open_state & {
 		transform: rotate(0deg);

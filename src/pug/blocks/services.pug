@@ -1,0 +1,46 @@
+-
+	list = [
+		{
+			icon: 'cubes',
+			title: 'Design',
+			text: 'a plan or drawing produced to show the look and function',
+		},
+		{
+			icon: 'cube',
+			title: 'Development',
+			text: 'Development is defined as the process of growth or new ',
+		},
+		{
+			icon: 'portfolio',
+			title: 'Branding',
+			text: 'The marketing practice of creating a name, symbol or ',
+		},
+		{
+			icon: 'layers',
+			title: 'Illustration',
+			text: 'An illustration is a decoration, interpretation or visual',
+		},
+	]
+
+include ../templates/mixins/_m_section_content
+
+section.section.services
+	.section_in 
+		+section_content({
+			mod: 'services__content',
+			label: 'Our Services',
+			title: 'Why People Choose Us',
+		})
+		ul.services__list 
+			each item in list
+				li.services_item
+					.services_item__body
+						.services_item__info
+							.services_item__icon
+								+icon(item.icon, 'icon--size_mod')
+							h3.services_item__title!= item.title
+							.services_item__text!= item.text
+						.services_item__wrap
+							a.services_item_link(href="#")
+								.services_item_link__text Learn more
+								.services_item_link__icon

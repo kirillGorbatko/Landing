@@ -1,0 +1,16 @@
+mixin button_with_icon(data)
+	if data.button
+		button.btn.btn--mod_3(type="submit" class=data.mod)
+			.btn__text!= data.text
+			.btn_icon
+				.btn_icon__arrow 
+					+icon(data.icon, 'icon--size_mod')
+				.btn_icon__rectangle
+	else
+		- mod = data.mod ? data.mod : 'btn--mod_2',
+		a.btn(href="#" class=mod)
+			.btn__text!= data.text
+			.btn_icon
+				.btn_icon__arrow 
+					+icon(data.icon, 'icon--size_mod')
+				.btn_icon__rectangle

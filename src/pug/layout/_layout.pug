@@ -2,6 +2,7 @@ include ../templates/_global_vars
 include ../templates/_global_mixins
 include ../templates/mixins/_m_header
 include ../templates/mixins/_m_footer
+include ../templates/mixins/_m_top_decors
 
 //- It is commented for optimization reasons
 //- include ../templates/_project_vars
@@ -18,6 +19,7 @@ html(lang="en" data-template-name= array.template_name)
 		.preloader
 		+header
 		.wrapper(class= array.layout_mod)
+			+top_decors
 			.base(class= array.layout_mod)
 				block content_block
 			+footer

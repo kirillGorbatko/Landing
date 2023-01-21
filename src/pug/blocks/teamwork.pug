@@ -1,0 +1,18 @@
+include ../templates/mixins/_m_section_content
+
+section.section.teamwork
+	.teamwork_blot
+			img.teamwork_blot__image(src="./images/decor_fill_3.svg" alt="Decor teamwork fill")
+			img.teamwork_blot__image(src="./images/decor_line_3.svg" alt="Decor teamwork line")
+	.section_in 
+		.teamwork__row 
+			.teamwork__column
+				+section_content({
+					mod: 'teamwork__content',
+					label: 'Our Teamwork ',
+					title: 'We Believe Success <br/> Lies On Teamwork',
+					text: 'Good teamwork means a synergistic way of working with each person committed and working towards a shared goal. ... It is therefore a necessity that leaders facilitate and build the teamwork skills of their people if they are',
+					btn: 'Learn more',
+				})
+			.teamwork__column
+				img.teamwork__image(src="./images/welcome.svg" alt="Welcome art")

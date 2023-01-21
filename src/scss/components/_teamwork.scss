@@ -1,0 +1,112 @@
+@import "ScssHelpers/_helpers_all.scss";
+
+.teamwork {}
+
+.teamwork_blot {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+
+	width: 100%;
+	height: 100%;
+	margin-bottom: -11.8rem;
+
+	pointer-events: none;
+}
+
+.teamwork_blot__image {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	&:nth-child(1){
+		@include bp($point_4, min) {
+			width: 6.6rem;
+			height: 24.8rem;
+		}
+		@include bp($point_4 - 1) {
+			width: 3.3rem;
+			height: 12.4rem;
+		}
+	}
+	&:nth-child(2){
+		@include bp($point_4, min) {
+			width: 8rem;
+			height: 30rem;
+			margin-bottom: -3.5rem;
+		}
+		@include bp($point_4 - 1) {
+			width: 4rem;
+			height: 15rem;
+			margin-bottom: -2rem;
+		}
+	}
+}
+
+.teamwork__row {
+	position: relative;
+	z-index: 2;
+	
+	display: flex;
+
+	margin: 0 -2rem -2rem 0;
+
+	@include bp($point_4, min) {
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	@include bp($point_4 - 1) {
+		flex-direction: column;
+	}
+}
+
+.teamwork__column {
+	padding: 0 2rem 2rem 0;
+
+	@include bp($point_1, min) {
+		&:nth-child(2n+1){
+			width: 48.4%;
+		}
+		&:nth-child(2n+2){
+			width: 51.6%;
+		}
+	}
+	@include bp($point_1 - 1, $point_4) {
+		&:nth-child(2n+1){
+			width: 52%;
+		}
+		&:nth-child(2n+2){
+			width: 48%;
+		}
+	}
+	@include bp($point_4 - 1) {
+		display: flex;
+		width: 100%;
+
+		&:nth-child(2n+1){
+			order: 2;
+		}
+		&:nth-child(2n+2){
+			order: 1;
+		}
+	}
+}
+
+.teamwork__content {
+	@include bp($point_4, min) {
+		max-width: 54rem;
+	}
+}
+
+.teamwork__image {
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	opacity: .7;
+
+	@include bp($point_4, min) {
+		padding-right: .8rem;
+	}
+}

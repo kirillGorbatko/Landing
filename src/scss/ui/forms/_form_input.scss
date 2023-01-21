@@ -2,6 +2,10 @@
 	@extend %form_el_label;
 }
 
+.form_input__email {
+	@extend %form_el_email;
+}
+
 .form_input__element {
 	@extend %form_el_default;
 }

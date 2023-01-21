@@ -1,0 +1,23 @@
+include ../templates/mixins/_m_section_content
+
+section.section.hero
+	.hero_blot
+		img.hero_blot__image(src="./images/decor_fill_1.svg" alt="Decor hero fill")
+		img.hero_blot__image(src="./images/decor_line_1.svg" alt="Decor hero line")
+	.section_in 
+		.hero__row 
+			.hero__column 
+				+section_content({
+					mod: 'hero__content',
+					label: 'Creative Agency',
+					title: 'We Deliver The Best Product for You',
+					title_tag: 'h1',
+					text: 'Design is the creation of a plan or convention for the construction of an object or a system as in architectural blueprints, engineering drawings, business processes,',
+					btn: 'Get started',
+					btn_mod: 'btn--mod_1',
+				})
+			.hero__column 
+				.hero__wrap
+					include ./svg/hero_man
+					.hero__decors
+						include ./decors

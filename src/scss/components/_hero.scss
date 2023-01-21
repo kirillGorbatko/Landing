@@ -1,0 +1,123 @@
+@import "./button_with_icon";
+
+.hero {
+	z-index: 2;
+}
+
+.hero_blot {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+
+	width: 100%;
+	height: 100%;
+
+	pointer-events: none;
+
+	@include bp($point_4, min) {
+		margin-bottom: -11.2rem;
+	}
+	@include bp($point_4 - 1) {
+		margin-bottom: 11.2rem;
+	}
+}
+
+.hero_blot__image {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	&:nth-child(1){
+		@include bp($point_4, min) {
+			width: 6rem;
+			height: 24.6rem;
+		}
+		@include bp($point_4 - 1) {
+			width: 4rem;
+			height: 18.2rem;
+		}
+	}
+	&:nth-child(2){
+		@include bp($point_4, min) {
+			width: 7.7rem;
+			height: 28.8rem;
+			margin-bottom: -2.3rem;
+		}
+		@include bp($point_4 - 1) {
+			width: 6rem;
+			height: 21.6rem;
+			margin-bottom: -2.2rem;
+		}
+	}
+}
+
+.hero__row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.hero__column {
+	@include bp($point_4, min) {
+		&:nth-child(2n+1){
+			width: 52%;
+		}
+		&:nth-child(2n+2){
+			width: 48%;
+		}
+	}
+
+	@include bp($point_4 - 1) {
+		width: 100%;
+
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.hero__wrap {
+	position: relative;
+
+	display: block;
+	width: 100%;
+	height: 100%;
+	
+	@include bp($point_4 - 1) {
+		max-width: 54rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.hero__image {	
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	@include bp($point_4, min) {
+		margin-top: 1.5rem;
+	}
+}
+
+.hero__decors {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	width: 100%;
+	height: 100%;
+
+	@include bp($point_2, min) {
+		font-size: 10px;
+	}
+	@include bp($point_3, $point_4) {
+		font-size: calc(100vw / 1024 * 10);
+	}
+	@include bp($point_4 - 1, $point_6) {
+		font-size: 10px;
+	}
+	@include bp($point_6 - 1) {
+		font-size: calc(100vw / 480 * 10);
+	}
+}

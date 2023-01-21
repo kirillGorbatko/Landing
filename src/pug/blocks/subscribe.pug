@@ -1,0 +1,32 @@
+include ../templates/mixins/_m_section_content
+include ../templates/mixins/_m_button_with_icon
+
+section.section.subscribe
+	img.subscribe__image(src="./images/mail.svg" alt="Mail illustration")
+	.subscribe_blot
+			img.subscribe_blot__image(src="./images/decor_fill_4.svg" alt="Decor mail fill")
+			img.subscribe_blot__image(src="./images/decor_line_4.svg" alt="Decor mail line")
+	.section_in
+		+section_content({
+			mod: 'subscribe__content',
+			title: 'Subscribe To Our Blog',
+			text: 'A newsletter is a tool used to communicate regularly with your subscribers, delivering the information',
+		})
+		form.subscribe__form(action="#")
+			.subscribe__icon()
+				+icon('mail', 'icon--size_mod')
+			+form_input({
+				block_class: 'subscribe__input',
+				class: 'form_input__email',
+				type: 'email',
+				required: true,
+				name: 'email_subscribe',
+				id: 'email_subscribe',
+				title: 'Email subscribe',
+				placeholder: 'Type Your Email Address',
+			})
+			+button_with_icon({
+				button: true,
+				text: 'Send now',
+				icon: 'cta',
+			})

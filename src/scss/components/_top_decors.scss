@@ -1,0 +1,39 @@
+.top_decors {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+
+	width: 100%;
+	
+	pointer-events: none;
+}
+
+.top_decors__item {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	&:nth-child(1){
+		@include bp($point_6, min) {
+			width: 54%;
+		}
+
+		@include bp($point_6 - 1) {
+			width: 78%;
+		}
+	}
+	&:nth-child(2){
+		@include bp($point_6, min) {
+			width: 44%;
+		}
+
+		@include bp($point_6 - 1) {
+			width: 64%;
+		}
+	}
+}
+
+.top_decors__img {
+	@extend %contain_img;
+}

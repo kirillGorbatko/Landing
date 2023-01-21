@@ -1,0 +1,23 @@
+include ../templates/mixins/_m_section_content
+
+section.section.design
+	.section_in
+		.design_blot
+			img.design_blot__image(src="./images/decor_fill_2.svg" alt="Decor design fill")
+			img.design_blot__image(src="./images/decor_line_2.svg" alt="Decor design line")
+		.design__row 
+			.design__column
+				+picture({
+					img: 'design.jpg',
+					class: 'design_img',
+					img_class: 'design_img__in',
+					alt: 'Design art',
+				})
+			.design__column
+				+section_content({
+					mod: 'design__content',
+					label: 'Design Things',
+					title: 'We Loves To Design <br/> Your Creative Ideas',
+					text: 'A creative concept is an overarching “Big Idea” that captures audience interest, influences their emotional response and inspires them to take action.It is a unifying theme that can be used across all campaign messages ',
+					btn: 'Learn more',
+				})

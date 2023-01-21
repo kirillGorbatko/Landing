@@ -1,0 +1,17 @@
+include ./_m_button_with_icon
+
+mixin section_content(data)
+	.section_content(class=data.mod)
+		if data.label
+			.section_content__label!=data.label 
+		if data.title
+			- title_tag = data.title_tag ? data.title_tag : 'h2'
+			#{title_tag}.section_content__title!= data.title
+		if data.text
+			.section_content__text!= data.text
+		if data.btn
+			+button_with_icon({
+				text: data.btn,
+				mod: data.btn_mod,
+				icon: "cta",
+			})

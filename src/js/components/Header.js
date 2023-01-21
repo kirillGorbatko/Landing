@@ -10,9 +10,9 @@ class Header {
 
 	get CLASSNAMES() {
 		return {
-			bodyScrollState: 'body--scroll_state',
 			bodyOpenMenuState: 'body--open_menu_state',
-			headerScrollState: 'scroll_mod',
+			headerScrollState: 'header--scroll_state',
+			headerPosState: 'header--hide_state',
 		};
 	}
 
@@ -22,6 +22,7 @@ class Header {
 		this.$menuTrigger = document.querySelectorAll(this.SELECTORS.menuTrigger);
 		this.openMenuState = false;
 		this.headerScroll = this.headerScroll.bind(this);
+		this.prevScrollPos = window.pageYOffset;
 
 		this.init = this.init.bind(this);
 		this.init();
@@ -38,15 +39,17 @@ class Header {
 	}
 
 	headerScroll(windowScrollTop) {
-		if (windowScrollTop > 10 && !this.$body.classList.contains(this.CLASSNAMES.bodyScrollState)) {
-			this.$body.classList.add(this.CLASSNAMES.bodyScrollState);
+		if (windowScrollTop > 10 && !this.$header.classList.contains(this.CLASSNAMES.headerScrollState)) {
 			this.$header.classList.add(this.CLASSNAMES.headerScrollState);
+		} else if (this.prevScrollPos < 10) {
+			this.$header.classList.remove(this.CLASSNAMES.headerScrollState);
+		} else if (this.prevScrollPos < window.pageYOffset) {
+			this.$header.classList.add(this.CLASSNAMES.headerPosState);
+		} else {
+			this.$header.classList.remove(this.CLASSNAMES.headerPosState);
 		}
 
-		if (windowScrollTop <= 10 && this.$body.classList.contains(this.CLASSNAMES.bodyScrollState)) {
-			this.$body.classList.remove(this.CLASSNAMES.bodyScrollState);
-			this.$header.classList.remove(this.CLASSNAMES.headerScrollState);
-		}
+		this.prevScrollPos = window.pageYOffset;
 	}
 
 	init() {

@@ -1,31 +1,83 @@
 %h1 {
 	font-family: $font_2;
-	font-size: 6.4rem;
 	font-weight: 700;
 	line-height: 1.16;
+
+	@include bp($point_2, min) {
+		font-size: 6.4rem;
+	}
+	@include bp($point_3) {
+		font-size: 4rem;
+	}
 }
 
 %h2 {
 	font-family: $font_2;
-	font-size: 5.2rem;
 	font-weight: 700;
+
+	@include bp($point_2, min) {
+		font-size: 5.2rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 3rem;
+	}
 }
 
 %h3 {
 	font-family: $font_2;
-	font-size: 3.4rem;
 	font-weight: 500;
-	line-height: 2.12;
+
+	@include bp($point_2, min) {
+		font-size: 3.4rem;
+	}
+	@include bp($point_3) {
+		font-size: 2.8rem;
+	}
 }
 
 %h4 {
 	font-family: $font_2;
-	font-size: 2.4rem;
 	font-weight: 500;
 	line-height: 1.33;
 	letter-spacing: .02em;
 
 	color: $gray_1;
+
+	@include bp($point_2, min) {
+		font-size: 2.4rem;
+	}
+	@include bp($point_3) {
+		font-size: 2rem;
+	}
+}
+
+%text {
+	letter-spacing: -.002em;
+	
+	line-height: 1.6;
+	color: $gray_2;
+
+	@include bp($point_2, min) {
+		font-size: 2rem;
+	}
+	@include bp($point_3) {
+		font-size: 1.6rem;
+	}
+}
+
+%label {
+	font-weight: 500;
+	line-height: 1.43;
+	font-family: $font_2;
+	color: $pink;
+
+	@include bp($point_2, min) {
+		font-size: 2.8rem;
+	}
+	@include bp($point_3) {
+		font-size: 2.4rem;
+	}
 }
 
 // offsets

@@ -5,7 +5,7 @@
 
 	text-align: center;
 	white-space: nowrap;
-	font-family: $font_1;
+	font-family: $font_2;
 
 	cursor: pointer;
 
@@ -15,27 +15,53 @@
 }
 
 //color extends
-%blue_btn_1 {
-	font-weight: 700;
+%pink_btn_1 {
+	font-weight: 500;
 	color: $white;
-	background-color: $color_link_base;
+	background-color: $pink_2;
 	transition: background-color .3s ease;
 
 	@include st_btn();
 
 	&:hover {
-		background-color: darken($color_link_base, 10%);
+		background-color: darken($pink_2, 10%);
 	}
 
 }
 
 //size extends
 %btn_size_1 {
-	height: 4rem;
+	height: 6.6rem;
+	padding: 0 2.2rem;
+
+	border-radius: 4px;
+	line-height: 6.6rem;
+	font-size: 2rem;
+	letter-spacing: .02em;
+
+	border-radius: $gl_radius;
+}
+
+%btn_size_2 {
+	height: 5.8rem;
 	padding: 0 1.2rem;
 
-	line-height: 4rem;
-	font-size: 1.6rem;
+	border-radius: 4px;
+	line-height: 5.8rem;
+	font-size: 2rem;
+	letter-spacing: .02em;
+
+	border-radius: $gl_radius;
+}
+
+%btn_size_3 {
+	height: 5.4rem;
+	padding: 0 1.7rem;
+
+	border-radius: 4px;
+	line-height: 5.4rem;
+	font-size: 2rem;
+	letter-spacing: .02em;
 
 	border-radius: $gl_radius;
 }
